@@ -1,0 +1,19 @@
+1.
+SELECT id, date, YEAR(date) year, MONTH(date) month, DAY(date) day  FROM mydb.orders;
+
+
+2.
+SELECT id, date, DATE_ADD(date, INTERVAL 1 DAY)  FROM mydb.orders;
+
+
+3.
+SELECT id, date, UNIX_TIMESTAMP(date)  FROM mydb.orders;
+
+
+4.
+SELECT COUNT(date) FROM mydb.orders
+where date > '1996-07-10 00:00:00' AND date <'1996-10-08 00:00:00';
+
+
+5.
+SELECT id, date, JSON_OBJECT('id', id, 'date', date) as JSON_OBJECT  FROM mydb.orders;
